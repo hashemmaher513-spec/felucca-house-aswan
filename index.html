@@ -1,0 +1,163 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Felucca House Aswan</title><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&display=swap">
+<style>
+/* Layout: animated Nile-at-dusk scene as the hero band, then rooms on painted Nubian-blue walls, a day-on-the-river timeline, and a live booking card */
+:root{
+  --bg:#f4f7fb;--surface:#ffffff;--ink:#1b2440;--muted:#5b6582;--line:#dbe2ee;
+  --nubian:#3a6fd8;--nubian-soft:#dfe8fb;--ochre:#d99a2b;--river:#2a4f9e;--sky1:#f6b26b;--sky2:#e0726b;--sky3:#6b5aa8;
+  --display:"Marcellus",Georgia,serif;--body:"Karla",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1426;--surface:#161e36;--ink:#e8ecf7;--muted:#a1abc8;--line:#26304f;
+  --nubian:#8db0ff;--nubian-soft:#1d2a52;--ochre:#f0b54d;--river:#1a3270;--sky1:#c9814a;--sky2:#9c4e5e;--sky3:#2e2a63;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1426;--surface:#161e36;--ink:#e8ecf7;--muted:#a1abc8;--line:#26304f;
+  --nubian:#8db0ff;--nubian-soft:#1d2a52;--ochre:#f0b54d;--river:#1a3270;--sky1:#c9814a;--sky2:#9c4e5e;--sky3:#2e2a63;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;overflow-x:hidden}
+.in{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.1;text-wrap:balance}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);font-weight:700}
+
+.scene{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky3) 0%,var(--sky2) 45%,var(--sky1) 70%,var(--river) 70.2%,var(--river) 100%);color:#fff}
+.scene nav .in{display:flex;justify-content:space-between;align-items:center;padding-block:22px;position:relative;z-index:2}
+.logo{font-family:var(--display);font-size:1.4rem;letter-spacing:.04em;color:#fff}
+.scene nav a{color:#fff;text-decoration:none;font-weight:700;border:1px solid rgb(255 255 255/.6);padding:9px 18px;border-radius:999px;transition:background .25s,color .25s}
+.scene nav a:hover{background:#fff;color:#1b2440}
+.herotext{position:relative;z-index:2;padding-block:40px 260px;max-width:760px}
+.herotext h1{font-size:clamp(2.8rem,7vw,5.6rem);animation:fade 1.2s .1s both}
+.herotext p{font-size:1.15rem;max-width:44ch;opacity:.92;animation:fade 1.2s .35s both}
+.herotext .eyebrow{color:#ffe2a8;animation:fade 1.2s both}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}}
+.sun{position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#ffe7a3 0%,#ffc768 55%,transparent 72%);right:16%;bottom:calc(30% - 40px);animation:sink 12s ease-in-out infinite alternate}
+@keyframes sink{from{transform:translateY(-30px)}to{transform:translateY(20px)}}
+.glint{position:absolute;right:calc(16% + 20px);bottom:6%;width:100px;height:26%;background:repeating-linear-gradient(180deg,rgb(255 215 140/.55) 0 3px,transparent 3px 12px);filter:blur(.5px);animation:shimmer 2.4s ease-in-out infinite alternate}
+@keyframes shimmer{to{opacity:.4;transform:scaleX(1.25)}}
+.dunes{position:absolute;inset:auto 0 30% 0;height:70px;width:100%}
+.boat{position:absolute;bottom:14%;left:-160px;width:150px;animation:sail 38s linear infinite}
+.boat svg{width:100%;height:auto;animation:bob 3s ease-in-out infinite}
+@keyframes sail{to{transform:translateX(calc(100vw + 320px))}}
+@keyframes bob{50%{transform:translateY(5px) rotate(-1.5deg)}}
+
+section.s{padding-block:96px}
+.shead{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.shead h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.shead p{max-width:42ch;color:var(--muted);margin:0}
+
+.rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.room{background:var(--surface);border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.room:hover{transform:translateY(-8px);box-shadow:0 24px 40px -24px rgb(27 36 64/.45)}
+.wall{aspect-ratio:4/3;max-width:100%;background:var(--nubian);position:relative;overflow:hidden}
+.wall svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.room:hover .wall svg{transform:scale(1.06)}
+.rbody{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.rbody h3{font-size:1.6rem}
+.rbody p{color:var(--muted);margin:0;flex:1}
+.meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;font-variant-numeric:tabular-nums}
+.meta b{font-family:var(--display);font-size:1.3rem;font-weight:400}
+.meta span{color:var(--muted);font-size:.85rem}
+@media (max-width:900px){.rooms{grid-template-columns:1fr}}
+
+.day{background:var(--nubian-soft)}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
+.timeline::before{content:"";position:absolute;top:11px;left:0;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--nubian) 0 10px,transparent 10px 18px)}
+.stop{padding-right:24px;display:flex;flex-direction:column;gap:8px;position:relative}
+.stop i{width:24px;height:24px;border-radius:50%;background:var(--ochre);border:5px solid var(--nubian-soft);box-shadow:0 0 0 2px var(--ochre)}
+.stop time{font-weight:700;color:var(--nubian);font-variant-numeric:tabular-nums;margin-top:8px}
+.stop h3{font-size:1.35rem}
+.stop p{margin:0;color:var(--muted)}
+@media (max-width:820px){.timeline{grid-template-columns:1fr;gap:28px}.timeline::before{display:none}}
+
+.book{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.book h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.card .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card label{display:flex;flex-direction:column;gap:6px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.card input,.card select{font:inherit;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;width:100%;min-width:0}
+.card input:focus-visible,.card select:focus-visible,.btn:focus-visible{outline:2px solid var(--nubian);outline-offset:2px}
+.sum{display:grid;gap:6px;border-top:1px dashed var(--line);padding-top:14px;font-variant-numeric:tabular-nums}
+.sum div{display:flex;justify-content:space-between;color:var(--muted)}
+.sum .tot{color:var(--ink);font-weight:700;font-size:1.2rem}
+.btn{font:inherit;font-weight:700;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:14px;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--nubian)}
+.msg{color:var(--nubian);font-weight:700;min-height:1.5em;margin:0}
+@media (max-width:900px){.book{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding-block:32px;color:var(--muted);font-size:.9rem}
+footer .in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@supports (animation-timeline:view()){.rv{animation:fade linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="scene">
+  <div class="sun"></div><div class="glint"></div>
+  <svg class="dunes" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 L0 40 Q150 10 300 38 T600 30 T900 42 T1200 26 L1200 70Z" fill="rgb(40 30 70/.55)"/></svg>
+  <div class="boat" aria-hidden="true"><svg viewBox="0 0 150 120"><path d="M70 8 L72 92 L18 92 Z" fill="#fff6e6"/><path d="M76 30 L78 92 L120 92Z" fill="#ffe9c4"/><path d="M10 94 Q75 120 140 94 Z" fill="#1a1630"/></svg></div>
+  <nav><div class="in"><div class="logo">Felucca House</div><a href="#book">Book a room</a></div></nav>
+  <div class="in"><div class="herotext">
+    <div class="eyebrow">West bank · Aswan</div>
+    <h1>Wake up where the Nile slows down.</h1>
+    <p>Nine painted rooms in a Nubian house above the water, ten minutes by boat from the city.</p>
+  </div></div>
+</header>
+
+<section class="s"><div class="in">
+  <div class="shead rv"><h2>The rooms</h2><p>Domed ceilings keep them cool through the afternoon. Every room faces the river.</p></div>
+  <div class="rooms">
+    <article class="room rv">
+      <div class="wall"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="var(--nubian)"/><path d="M150 300 V170 Q200 110 250 170 V300Z" fill="#f4e6c8"/><g fill="#fff" opacity=".85"><path d="M0 60 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 l20 -20 l20 20 v6 H0z"/></g><circle cx="320" cy="120" r="22" fill="var(--ochre)"/></svg></div>
+      <div class="rbody"><h3>Doum Room</h3><p>Ground floor, a step from the garden. Queen bed and a reading bench.</p><div class="meta"><b>$85</b><span>per night · 2 guests</span></div></div>
+    </article>
+    <article class="room rv">
+      <div class="wall"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#d98a3a"/><path d="M60 300 V150 Q110 90 160 150 V300Z M240 300 V150 Q290 90 340 150 V300Z" fill="#f4e6c8"/><g fill="var(--nubian)"><rect x="0" y="40" width="400" height="10"/><rect x="0" y="58" width="400" height="4"/></g></svg></div>
+      <div class="rbody"><h3>Twin Arches</h3><p>Two arched windows over the river and a private terrace for breakfast.</p><div class="meta"><b>$120</b><span>per night · 2 guests</span></div></div>
+    </article>
+    <article class="room rv">
+      <div class="wall"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#2f8a7a"/><circle cx="200" cy="320" r="170" fill="#f4e6c8"/><g fill="#fff" opacity=".8"><circle cx="60" cy="60" r="6"/><circle cx="100" cy="60" r="6"/><circle cx="140" cy="60" r="6"/><circle cx="260" cy="60" r="6"/><circle cx="300" cy="60" r="6"/><circle cx="340" cy="60" r="6"/></g></svg></div>
+      <div class="rbody"><h3>The Dome Suite</h3><p>Top floor under the big dome, with a rooftop for watching the sun go down over the dunes.</p><div class="meta"><b>$190</b><span>per night · 4 guests</span></div></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="s day"><div class="in">
+  <div class="shead rv"><h2>A day here</h2><p>Nothing is scheduled unless you want it to be. This is what most guests end up doing.</p></div>
+  <div class="timeline">
+    <div class="stop rv"><i></i><time>06:30</time><h3>Sunrise on the roof</h3><p>Hibiscus tea while the fishing boats head out.</p></div>
+    <div class="stop rv"><i></i><time>09:00</time><h3>Breakfast</h3><p>Feteer, fresh dates, and eggs from the village.</p></div>
+    <div class="stop rv"><i></i><time>15:30</time><h3>Felucca sail</h3><p>Two hours around Elephantine Island with Captain Saad.</p></div>
+    <div class="stop rv"><i></i><time>19:30</time><h3>Dinner by the water</h3><p>Nubian stew baked in clay, and stars you don't see in Cairo.</p></div>
+  </div>
+</div></section>
+
+<section class="s" id="book"><div class="in book">
+  <div class="rv">
+    <div class="eyebrow">Reservations</div>
+    <h2>Pick your dates.</h2>
+    <p style="color:var(--muted);max-width:40ch">Prices include breakfast and the boat transfer from the Corniche. Free cancellation up to 7 days before you arrive.</p>
+  </div>
+  <form class="card rv" id="form">
+    <div class="row"><label>Check-in<input type="date" id="ci" required></label><label>Check-out<input type="date" id="co" required></label></div>
+    <div class="row"><label>Room<select id="room"><option value="85">Doum Room</option><option value="120" selected>Twin Arches</option><option value="190">The Dome Suite</option></select></label><label>Guests<select id="g"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label></div>
+    <div class="sum"><div><span id="nl">Nights</span><span id="nv">–</span></div><div><span>Tourism tax (12%)</span><span id="tax">–</span></div><div class="tot"><span>Total</span><span id="tot">–</span></div></div>
+    <button class="btn" type="submit">Request booking</button>
+    <p class="msg" id="msg" aria-live="polite"></p>
+  </form>
+</div></section>
+
+<footer><div class="in"><span>Felucca House · West Bank, Aswan</span><span>Concept project</span></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const d=new Date();const iso=x=>x.toISOString().slice(0,10);
+const a=new Date(d);a.setDate(d.getDate()+14);const b=new Date(a);b.setDate(a.getDate()+3);
+$("ci").value=iso(a);$("co").value=iso(b);$("ci").min=iso(d);
+function upd(){
+  const n=Math.round((new Date($("co").value)-new Date($("ci").value))/864e5);const r=+$("room").value;
+  if(!(n>0)){$("nl").textContent="Nights";$("nv").textContent="Check-out must be after check-in";$("tax").textContent="–";$("tot").textContent="–";return}
+  const sub=n*r,tax=sub*.12;
+  $("nl").textContent=`${n} night${n>1?"s":""} × $${r}`;$("nv").textContent=`$${sub.toFixed(0)}`;$("tax").textContent=`$${tax.toFixed(2)}`;$("tot").textContent=`$${(sub+tax).toFixed(2)}`;
+}
+["ci","co","room"].forEach(i=>$(i).addEventListener("input",upd));upd();
+$("form").addEventListener("submit",e=>{e.preventDefault();$("msg").textContent="This is a demo site, so no booking was sent.";});
+</script>
+
+</body></html>
